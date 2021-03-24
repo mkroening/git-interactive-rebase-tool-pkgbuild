@@ -2,6 +2,7 @@
 # Contributor: Martin Kröning <m.kroening@hotmail.de>
 
 pkgname=git-interactive-rebase-tool
+_binname=interactive-rebase-tool
 pkgver=2.0.0
 pkgrel=1
 pkgdesc='Native cross platform full feature terminal based sequence editor for git interactive rebase. Written in Rust using ncurses.'
@@ -29,6 +30,6 @@ check() {
 package() {
   cd "$pkgname-$pkgver"
 
-  install -Dm 755 target/release/interactive-rebase-tool -t "$pkgdir/usr/bin"
-  install -Dm 644 src/interactive-rebase-tool.1 -t "$pkgdir/usr/share/man/man1"
+  install -Dm 755 target/release/$_binname -t "$pkgdir/usr/bin"
+  install -Dm 644 src/$_binname.1 -t "$pkgdir/usr/share/man/man1"
 }
