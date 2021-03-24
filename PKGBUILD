@@ -33,5 +33,4 @@ package() {
   mkdir -p $pkgdir/usr/share/man/man1
   install -m755 target/release/interactive-rebase-tool $pkgdir/usr/bin/interactive-rebase-tool
   install -m644 src/interactive-rebase-tool.1 $pkgdir/usr/share/man/man1/interactive-rebase-tool.1
-  gzip $pkgdir/usr/share/man/man1/interactive-rebase-tool.1
 }
