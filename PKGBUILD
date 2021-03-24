@@ -4,7 +4,7 @@
 pkgname=git-interactive-rebase-tool
 _binname=interactive-rebase-tool
 pkgver=2.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Native cross-platform full feature terminal-based sequence editor for git interactive rebase.'
 arch=('x86_64')
 url='https://gitrebasetool.mitmaro.ca/'
