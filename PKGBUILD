@@ -37,4 +37,3 @@ package() {
   install -m644 LICENSE $pkgdir/usr/share/licenses/$pkgname
   gzip $pkgdir/usr/share/man/man1/interactive-rebase-tool.1
 }
-
