@@ -1,4 +1,5 @@
 # Maintainer: Gabriel Guldner <gabriel at guldner dot eu>
+# Contributor: Martin Kröning <m.kroening@hotmail.de>
 
 pkgname=git-interactive-rebase-tool
 pkgver=2.0.0
@@ -8,19 +9,13 @@ arch=('x86_64')
 url='https://github.com/MitMaro/git-interactive-rebase-tool'
 license=('GPL3')
 depends=('rust')
-makedepends=('git' 'rust' 'cargo')
+makedepends=('rust' 'cargo')
 install=$pkgname.install
-sha256sums=('SKIP')
-source=('git+https://github.com/MitMaro/git-interactive-rebase-tool.git')
-
-prepare() {
-  cd $pkgname
-  git checkout tags/$pkgver
-  git clean -dfx
-}
+source=("$pkgname-$pkgver.tar.gz::https://github.com/MitMaro/$pkgname/archive/$pkgver.tar.gz")
+sha256sums=('572815b6bf152cae9414635caf9c8c918a575747c3a8885767380da4aeeeb709')
 
 build() {
-  cd $pkgname
+  cd "$pkgname-$pkgver"
 
   if [ $(which rustup > /dev/null 2>&1; echo $?) -eq 0 ]; then
     if [ $(rustup default > /dev/null 2>&1; echo $?) -ne 0 ]; then
@@ -32,7 +27,8 @@ build() {
 }
 
 package() {
-  cd $pkgname
+  cd "$pkgname-$pkgver"
+
   mkdir -p $pkgdir/usr/bin
   mkdir -p $pkgdir/usr/share/man/man1
   mkdir -p $pkgdir/usr/share/licenses/$pkgname
