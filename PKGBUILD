@@ -20,6 +20,12 @@ build() {
   cargo build --release --locked --target-dir=target
 }
 
+check() {
+  cd "$pkgname-$pkgver"
+
+  cargo test --release --locked --target-dir=target
+}
+
 package() {
   cd "$pkgname-$pkgver"
 
