@@ -29,6 +29,6 @@ check() {
 package() {
   cd "$pkgname-$pkgver"
 
-  install -Dm755 target/release/interactive-rebase-tool "$pkgdir/usr/bin/interactive-rebase-tool"
-  install -Dm644 src/interactive-rebase-tool.1 "$pkgdir/usr/share/man/man1/interactive-rebase-tool.1"
+  install -Dm 755 target/release/interactive-rebase-tool -t "$pkgdir/usr/bin"
+  install -Dm 644 src/interactive-rebase-tool.1 -t "$pkgdir/usr/share/man/man1"
 }
